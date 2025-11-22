@@ -120,7 +120,7 @@
                         <xsl:apply-templates select="BookedBikes/BookedBike"/>
                     </xsl:when>
                     <xsl:otherwise>
-                        <tr><td colspan="4" class="muted">No booked bikes</td></tr>
+                        <tr><td colspan="4" class="muted">No booked bikes — client brings own bike</td></tr>
                     </xsl:otherwise>
                 </xsl:choose>
             </tbody>
