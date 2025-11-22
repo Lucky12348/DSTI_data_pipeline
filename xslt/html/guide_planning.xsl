@@ -14,7 +14,7 @@
     <xsl:template match="/">
         <html>
             <head>
-                <title>Planning des guides</title>
+                <title>Guide planning</title>
                 <style>
                     body { font-family: "Segoe UI", sans-serif; background: #f7f7f9; color: #1f2933; margin: 0; padding: 24px; }
                     h1 { text-align: center; color: #0f172a; }
@@ -26,7 +26,7 @@
                 </style>
             </head>
             <body>
-                <h1>Planning des guides</h1>
+                <h1>Guide planning</h1>
                 <xsl:apply-templates select="Operator/Guides/Guide">
                     <xsl:sort select="LastName"/>
                     <xsl:sort select="FirstName"/>
@@ -40,7 +40,7 @@
         <div class="card">
             <h2><xsl:value-of select="FirstName"/><xsl:text> </xsl:text><xsl:value-of select="LastName"/></h2>
             <div class="muted">
-                <xsl:value-of select="Email"/> — <xsl:value-of select="Phone"/> — Langues: <xsl:value-of select="Languages"/>
+                <xsl:value-of select="Email"/> — <xsl:value-of select="Phone"/> — Languages: <xsl:value-of select="Languages"/>
             </div>
             <div class="muted">Specialty: <xsl:value-of select="Specialty"/> — Exp: <xsl:value-of select="ExperienceYears"/> years</div>
 
