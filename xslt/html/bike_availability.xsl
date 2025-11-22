@@ -2,7 +2,6 @@
 <!--
   Scenario (HTML): Bike availability by region.
   - List each bike with its current status.
-  - Compute how many bookings reference the bike (Bookings/BookedBike/@ref).
   - Highlight reserved/in-maintenance bikes vs available ones.
 -->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
@@ -46,28 +45,23 @@
                         <th>Brand</th>
                         <th>Model</th>
                         <th>Type</th>
-                        <th>Price/day</th>
                         <th>Status</th>
-                        <th>Bookings</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <xsl:apply-templates select="Bikes/Bike"/>
-                </tbody>
-            </table>
-        </div>
-    </xsl:template>
+                </tr>
+            </thead>
+            <tbody>
+                <xsl:apply-templates select="Bikes/Bike"/>
+            </tbody>
+        </table>
+    </div>
+</xsl:template>
 
-    <xsl:template match="Bike">
-        <xsl:variable name="bookingCount" select="count(key('kBookingsByBike', @id))"/>
+<xsl:template match="Bike">
         <tr>
             <td><xsl:value-of select="@id"/></td>
             <td><xsl:value-of select="Brand"/></td>
             <td><xsl:value-of select="Model"/></td>
             <td><xsl:value-of select="Type"/></td>
-            <td><xsl:value-of select="DailyPrice"/> <xsl:value-of select="DailyPrice/@currency"/></td>
             <td><span class="status {Status}"><xsl:value-of select="Status"/></span></td>
-            <td><xsl:value-of select="$bookingCount"/> booking(s)</td>
         </tr>
     </xsl:template>
 
