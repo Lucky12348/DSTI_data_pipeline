@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   Scenario (HTML): Client invoice per booking.
-  For each Booking, the template resolves:
+  For each Booking (now nested under TourEvent/EventBookings), the template resolves:
     - Client identity via ClientRef -> Clients/Client.
-    - Event, Tour, Region via EventRef -> TourEvent -> ancestor Tour/Region.
+    - Event context via ancestor::TourEvent -> ancestor Tour/Region.
     - Guides via GuideRef, routes via CyclingRouteRef.
     - Bikes via BookedBike/@ref -> Bikes/Bike.
     - Payments with total amount.
@@ -15,11 +15,9 @@
 
     <!-- Keys for fast lookup -->
     <xsl:key name="kClient" match="Operator/Clients/Client" use="@id"/>
-    <xsl:key name="kEvent" match="Operator/Regions/Region/Tours/Tour/TourEvents/TourEvent" use="@id"/>
     <xsl:key name="kGuide" match="Operator/Guides/Guide" use="@id"/>
     <xsl:key name="kRoute" match="Operator/Regions/Region/CyclingRoutes/CyclingRoute" use="@id"/>
     <xsl:key name="kBike" match="Operator/Regions/Region/Bikes/Bike" use="@id"/>
-    <xsl:key name="kBookingsByEvent" match="Operator/Bookings/Booking" use="EventRef"/>
 
     <xsl:template match="/">
         <html>
@@ -44,7 +42,7 @@
             </head>
             <body>
                 <h1>Client invoices</h1>
-                <xsl:apply-templates select="Operator/Bookings/Booking">
+                <xsl:apply-templates select="Operator/Regions/Region/Tours/Tour/TourEvents/TourEvent/EventBookings/Booking">
                     <xsl:sort select="BookingDate"/>
                 </xsl:apply-templates>
             </body>
@@ -54,11 +52,11 @@
     <xsl:template match="Booking">
         <!-- Resolve related entities via keys; ancestor::* picks the owning Tour/Region for context -->
         <xsl:variable name="client" select="key('kClient', ClientRef)"/>
-        <xsl:variable name="event" select="key('kEvent', EventRef)"/>
+        <xsl:variable name="event" select="ancestor::TourEvent[1]"/>
         <xsl:variable name="tour" select="$event/ancestor::Tour[1]"/>
         <xsl:variable name="region" select="$tour/ancestor::Region[1]"/>
         <xsl:variable name="bookingId" select="@id"/>
-        <xsl:variable name="eventBookings" select="count(key('kBookingsByEvent', $event/@id))"/>
+        <xsl:variable name="eventBookings" select="count($event/EventBookings/Booking)"/>
 
         <div class="invoice">
             <div class="header">

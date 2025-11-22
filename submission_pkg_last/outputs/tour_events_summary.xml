@@ -80,4 +80,44 @@
       <BookingCount>2</BookingCount>
     </Event>
   </TourSummary>
+  <TourSummary id="t5">
+    <Title>Catalonia Coast and Hills</Title>
+    <Region>Catalonia</Region>
+    <Country>Spain</Country>
+    <DurationDays>4</DurationDays>
+    <Difficulty>Moderate</Difficulty>
+    <BasePrice currency="EUR">680.00</BasePrice>
+    <Event id="e9">
+      <StartDate>2025-09-05</StartDate>
+      <EndDate>2025-09-08</EndDate>
+      <MaxParticipants>10</MaxParticipants>
+      <BookingCount>2</BookingCount>
+    </Event>
+    <Event id="e10">
+      <StartDate>2025-10-01</StartDate>
+      <EndDate>2025-10-03</EndDate>
+      <MaxParticipants>8</MaxParticipants>
+      <BookingCount>0</BookingCount>
+    </Event>
+  </TourSummary>
+  <TourSummary id="t6">
+    <Title>Black Forest Valleys &amp; Lakes</Title>
+    <Region>Black Forest</Region>
+    <Country>Germany</Country>
+    <DurationDays>3</DurationDays>
+    <Difficulty>Easy</Difficulty>
+    <BasePrice currency="EUR">540.00</BasePrice>
+    <Event id="e11">
+      <StartDate>2025-09-12</StartDate>
+      <EndDate>2025-09-14</EndDate>
+      <MaxParticipants>12</MaxParticipants>
+      <BookingCount>1</BookingCount>
+    </Event>
+    <Event id="e12">
+      <StartDate>2025-10-18</StartDate>
+      <EndDate>2025-10-21</EndDate>
+      <MaxParticipants>10</MaxParticipants>
+      <BookingCount>2</BookingCount>
+    </Event>
+  </TourSummary>
 </ToursSummary>

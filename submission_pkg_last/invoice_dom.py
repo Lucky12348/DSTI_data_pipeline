@@ -25,6 +25,16 @@ def _text(node, name):
     return "".join(texts).strip()
 
 
+def _ancestor(node, tag_name):
+    """Return the first ancestor element with the given tag name, or None."""
+    current = node.parentNode
+    while current:
+        if current.nodeType == current.ELEMENT_NODE and current.tagName == tag_name:
+            return current
+        current = current.parentNode
+    return None
+
+
 def build_clients(doc):
     clients = {}
     for client in doc.getElementsByTagName("Client"):
@@ -80,7 +90,8 @@ def render_html(bookings, clients, events):
         bid = booking.getAttribute("id")
         bdate = _text(booking, "BookingDate")
         client_ref = _text(booking, "ClientRef")
-        event_ref = _text(booking, "EventRef")
+        event_node = _ancestor(booking, "TourEvent")
+        event_ref = event_node.getAttribute("id") if event_node else ""
         client = clients.get(client_ref, {})
         event_ctx = events.get(event_ref, {})
         amount_nodes = booking.getElementsByTagName("Amount")

@@ -10,7 +10,7 @@
     <xsl:output method="html" encoding="UTF-8" indent="yes"/>
 
     <!-- Keys -->
-    <xsl:key name="kBookingsByBike" match="Operator/Bookings/Booking/BookedBikes/BookedBike" use="@ref"/>
+    <xsl:key name="kBookingsByBike" match="Operator/Regions/Region/Tours/Tour/TourEvents/TourEvent/EventBookings/Booking/BookedBikes/BookedBike" use="@ref"/>
 
     <xsl:template match="/">
         <html>
@@ -43,11 +43,11 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Marque</th>
+                        <th>Brand</th>
                         <th>Model</th>
                         <th>Type</th>
-                        <th>Prix/jour</th>
-                        <th>Statut</th>
+                        <th>Price/day</th>
+                        <th>Status</th>
                         <th>Bookings</th>
                     </tr>
                 </thead>

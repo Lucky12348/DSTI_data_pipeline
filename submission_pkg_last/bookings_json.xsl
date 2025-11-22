@@ -7,11 +7,10 @@
     <xsl:output method="text" encoding="UTF-8"/>
 
     <xsl:key name="kClient" match="Operator/Clients/Client" use="@id"/>
-    <xsl:key name="kEvent" match="Operator/Regions/Region/Tours/Tour/TourEvents/TourEvent" use="@id"/>
 
     <xsl:template match="/">
         <xsl:text>[</xsl:text>
-        <xsl:apply-templates select="Operator/Bookings/Booking">
+        <xsl:apply-templates select="Operator/Regions/Region/Tours/Tour/TourEvents/TourEvent/EventBookings/Booking">
             <xsl:sort select="BookingDate"/>
         </xsl:apply-templates>
         <xsl:text>]</xsl:text>
@@ -20,7 +19,7 @@
     <xsl:template match="Booking">
         <xsl:if test="position() &gt; 1"><xsl:text>,</xsl:text></xsl:if>
         <xsl:variable name="client" select="key('kClient', ClientRef)"/>
-        <xsl:variable name="event" select="key('kEvent', EventRef)"/>
+        <xsl:variable name="event" select="ancestor::TourEvent[1]"/>
         <xsl:variable name="tour" select="$event/ancestor::Tour[1]"/>
         <xsl:variable name="region" select="$tour/ancestor::Region[1]"/>
         <xsl:variable name="total" select="sum(Payments/Payment/Amount)"/>

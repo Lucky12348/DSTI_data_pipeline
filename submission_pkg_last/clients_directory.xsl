@@ -9,8 +9,7 @@
     <xsl:output method="html" encoding="UTF-8" indent="yes"/>
 
     <!-- Keys -->
-    <xsl:key name="kBookingsByClient" match="Operator/Bookings/Booking" use="ClientRef"/>
-    <xsl:key name="kEvent" match="Operator/Regions/Region/Tours/Tour/TourEvents/TourEvent" use="@id"/>
+    <xsl:key name="kBookingsByClient" match="Operator/Regions/Region/Tours/Tour/TourEvents/TourEvent/EventBookings/Booking" use="ClientRef"/>
 
     <xsl:template match="/">
         <html>
@@ -40,7 +39,7 @@
     <xsl:template match="Client">
         <xsl:variable name="bookings" select="key('kBookingsByClient', @id)"/>
         <div class="card">
-            <h2><xsl:value-of select="FirstName"/> <xsl:value-of select="LastName"/></h2>
+            <h2><xsl:value-of select="FirstName"/><xsl:text> </xsl:text><xsl:value-of select="LastName"/></h2>
             <div class="muted">
                 <xsl:value-of select="Email"/> — <xsl:value-of select="Phone"/>
             </div>
@@ -68,7 +67,7 @@
                             <xsl:when test="$bookings">
                                 <xsl:for-each select="$bookings">
                                     <xsl:sort select="BookingDate"/>
-                                    <xsl:variable name="event" select="key('kEvent', EventRef)"/>
+                                    <xsl:variable name="event" select="ancestor::TourEvent[1]"/>
                                     <xsl:variable name="tour" select="$event/ancestor::Tour[1]"/>
                                     <xsl:variable name="region" select="$tour/ancestor::Region[1]"/>
                                     <tr>

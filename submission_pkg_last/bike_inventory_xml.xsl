@@ -7,7 +7,7 @@
 
     <xsl:output method="xml" encoding="UTF-8" indent="yes"/>
 
-    <xsl:key name="kBookingsByBike" match="Operator/Bookings/Booking/BookedBikes/BookedBike" use="@ref"/>
+    <xsl:key name="kBookingsByBike" match="Operator/Regions/Region/Tours/Tour/TourEvents/TourEvent/EventBookings/Booking/BookedBikes/BookedBike" use="@ref"/>
 
     <xsl:template match="/">
         <BikeInventory>

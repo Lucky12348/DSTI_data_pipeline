@@ -7,8 +7,6 @@
 
     <xsl:output method="xml" encoding="UTF-8" indent="yes"/>
 
-    <xsl:key name="kBookingsByEvent" match="Operator/Bookings/Booking" use="EventRef"/>
-
     <xsl:template match="/">
         <ToursSummary>
             <xsl:apply-templates select="Operator/Regions/Region/Tours/Tour"/>
@@ -32,7 +30,7 @@
             <StartDate><xsl:value-of select="StartDate"/></StartDate>
             <EndDate><xsl:value-of select="EndDate"/></EndDate>
             <MaxParticipants><xsl:value-of select="MaxParticipants"/></MaxParticipants>
-            <BookingCount><xsl:value-of select="count(key('kBookingsByEvent', @id))"/></BookingCount>
+            <BookingCount><xsl:value-of select="count(EventBookings/Booking)"/></BookingCount>
         </Event>
     </xsl:template>
 

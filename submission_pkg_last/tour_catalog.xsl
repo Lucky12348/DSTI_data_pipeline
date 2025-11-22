@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   XSLT Scenario: HTML catalogue of tours per region, with schedules, difficulty badges,
-  and booking counts (bookings read from Operator/Bookings via EventRef).
+  and booking counts (bookings stored under TourEvent/EventBookings).
 -->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
     <xsl:output method="html" encoding="UTF-8" indent="yes"/>
 
     <!-- Keys for fast lookup -->
-    <xsl:key name="kBookingsByEvent" match="Operator/Bookings/Booking" use="EventRef"/>
     <xsl:key name="kGuideById" match="Operator/Guides/Guide" use="@id"/>
     <xsl:key name="kRouteById" match="Operator/Regions/Region/CyclingRoutes/CyclingRoute" use="@id"/>
 
@@ -109,7 +108,7 @@
                 </xsl:for-each>
             </td>
             <td>
-                <xsl:variable name="bookingsCount" select="count(key('kBookingsByEvent', @id))"/>
+                <xsl:variable name="bookingsCount" select="count(EventBookings/Booking)"/>
                 <xsl:value-of select="$bookingsCount"/>
                 <xsl:text> booking(s)</xsl:text>
             </td>

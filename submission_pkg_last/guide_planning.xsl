@@ -39,7 +39,7 @@
     <xsl:template match="Guide">
         <xsl:variable name="eventsRefs" select="key('kEventsByGuide', @id)"/>
         <div class="card">
-            <h2><xsl:value-of select="FirstName"/> <xsl:value-of select="LastName"/></h2>
+            <h2><xsl:value-of select="FirstName"/><xsl:text> </xsl:text><xsl:value-of select="LastName"/></h2>
             <div class="muted">
                 <xsl:value-of select="Email"/> — <xsl:value-of select="Phone"/> — Langues: <xsl:value-of select="Languages"/>
             </div>

@@ -7,8 +7,6 @@
 
     <xsl:output method="html" encoding="UTF-8" indent="yes"/>
 
-    <xsl:key name="kBookingsByEvent" match="Operator/Bookings/Booking" use="EventRef"/>
-
     <xsl:template match="/">
         <html>
             <head>
@@ -45,7 +43,7 @@
     </xsl:template>
 
     <xsl:template match="TourEvent">
-        <xsl:variable name="bookings" select="key('kBookingsByEvent', @id)"/>
+        <xsl:variable name="bookings" select="EventBookings/Booking"/>
         <xsl:variable name="tour" select="ancestor::Tour[1]"/>
         <xsl:variable name="region" select="ancestor::Region[1]"/>
         <tr>
