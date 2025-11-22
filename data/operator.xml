@@ -247,7 +247,7 @@
                 </Bike>
                 <Bike id="b5">
                     <Brand>Moustache</Brand>
-                    <Model>Samedi 27</Model>
+                    <Model>E-MTB Tourer 27</Model>
                     <Type>Electric</Type>
                     <Status>Reserved</Status>
                     <DailyPrice currency="EUR">55.00</DailyPrice>
@@ -842,7 +842,7 @@
                 </Bike>
                 <Bike id="b13">
                     <Brand>Canyon</Brand>
-                    <Model>Neuron</Model>
+                    <Model>Trail Pro</Model>
                     <Type>Mountain</Type>
                     <Status>Reserved</Status>
                     <DailyPrice currency="EUR">45.00</DailyPrice>
