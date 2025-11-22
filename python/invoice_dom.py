@@ -1,9 +1,9 @@
 """
 DOM-based implementation of the "facture client" scenario without XSLT.
-Parses operator.xml, resolves references, and writes an HTML invoice per booking.
+Parses data/operator.xml, resolves references, and writes an HTML invoice per booking.
 
 Usage:
-  python invoice_dom.py --xml operator.xml --out outputs/invoice_dom.html
+  python python/invoice_dom.py --xml data/operator.xml --out outputs/invoice_dom.html
 """
 
 import argparse
@@ -99,15 +99,15 @@ def render_html(bookings, clients, events):
         currency = amount_nodes[0].getAttribute("currency") if amount_nodes else "EUR"
 
         append('<div class="card">')
-        append(f'<div class="muted">Booking {bid} — {bdate}</div>')
+        append(f'<div class="muted">Booking {bid} - {bdate}</div>')
         append(
             f'<div>Client: <strong>{client.get("first","")} {client.get("last","")}</strong> '
-            f'— {client.get("email","")} — {client.get("phone","")}</div>'
+            f'- {client.get("email","")} - {client.get("phone","")}</div>'
         )
         append(
             f'<div>Tour: <strong>{event_ctx.get("tour_title","")}</strong> '
             f'({event_ctx.get("region","")} / {event_ctx.get("country","")}) '
-            f'— Difficulty {event_ctx.get("tour_diff","")}</div>'
+            f'- Difficulty {event_ctx.get("tour_diff","")}</div>'
         )
         append(f'<div class="muted">Event: {event_ref}</div>')
         append(f'<div class="total">Total paid: {total:.2f} {currency}</div>')
@@ -121,9 +121,15 @@ def main():
     parser = argparse.ArgumentParser(
         description="DOM-based invoice generator (no XSLT)."
     )
-    parser.add_argument("--xml", default="operator.xml", type=Path, help="XML input")
+    root = Path(__file__).resolve().parent.parent
     parser.add_argument(
-        "--out", default=Path("outputs/invoice_dom.html"), type=Path, help="HTML output"
+        "--xml", default=root / "data/operator.xml", type=Path, help="XML input"
+    )
+    parser.add_argument(
+        "--out",
+        default=root / "outputs/invoice_dom.html",
+        type=Path,
+        help="HTML output",
     )
     args = parser.parse_args()
 

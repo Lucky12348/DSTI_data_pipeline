@@ -1,25 +1,29 @@
+from pathlib import Path
+
 import xmlschema
 from lxml import etree
 
-XSD_PATH = "operator.xsd"
-XML_PATH = "operator.xml"
+# Resolve paths relative to the project root so the script works from any CWD.
+ROOT = Path(__file__).resolve().parent.parent
+XSD_PATH = ROOT / "schemas" / "xml" / "operator.xsd"
+XML_PATH = ROOT / "data" / "operator.xml"
 
 
 def validate_with_xmlschema():
     """Primary validation with xmlschema."""
-    schema = xmlschema.XMLSchema(XSD_PATH)
-    schema.validate(XML_PATH)
-    print("XML is valid against operator.xsd (xmlschema).")
+    schema = xmlschema.XMLSchema(str(XSD_PATH))
+    schema.validate(str(XML_PATH))
+    print(f"XML is valid against {XSD_PATH} (xmlschema).")
 
 
 def validate_with_lxml():
     """Secondary validation with lxml to inspect the error log."""
-    xsd_doc = etree.parse(XSD_PATH)
+    xsd_doc = etree.parse(str(XSD_PATH))
     xsd = etree.XMLSchema(xsd_doc)
-    xml_doc = etree.parse(XML_PATH)
+    xml_doc = etree.parse(str(XML_PATH))
 
     if xsd.validate(xml_doc):
-        print("XML is valid against operator.xsd (lxml).")
+        print(f"XML is valid against {XSD_PATH} (lxml).")
     else:
         print("lxml validation errors:")
         for error in xsd.error_log:
@@ -32,7 +36,7 @@ def main():
     except xmlschema.XMLSchemaValidationError as e:
         print("XML is not valid:")
         print(f"- {e}")
-        for error in xmlschema.XMLSchema(XSD_PATH).iter_errors(XML_PATH):
+        for error in xmlschema.XMLSchema(str(XSD_PATH)).iter_errors(str(XML_PATH)):
             print(f"- {error}")
         return
     except Exception as e:

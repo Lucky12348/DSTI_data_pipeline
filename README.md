@@ -1,1 +1,1 @@
-# resources
+# DSTI data pipeline (XML)
