@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<!-- XML dataset for the cycling tour operator platform. -->
+<!-- Dataset for the cycling tour operator platform. -->
 <Operator>
     <Guides>
         <Guide id="g1">
@@ -7,7 +7,7 @@
             <LastName>Martin</LastName>
             <Email>laura.martin@example.com</Email>
             <Phone>+33 6 11 22 33 44</Phone>
-            <Languages>French,English</Languages>
+            <Languages>French, English</Languages>
             <Specialty>Road tours</Specialty>
             <ExperienceYears>5</ExperienceYears>
         </Guide>
@@ -16,7 +16,7 @@
             <LastName>Rossi</LastName>
             <Email>marco.rossi@example.com</Email>
             <Phone>+39 333 555 666</Phone>
-            <Languages>Italian,English</Languages>
+            <Languages>Italian, English</Languages>
             <Specialty>Mountain biking</Specialty>
             <ExperienceYears>8</ExperienceYears>
         </Guide>
@@ -25,7 +25,7 @@
             <LastName>Nunes</LastName>
             <Email>sofia.nunes@example.com</Email>
             <Phone>+351 912 345 678</Phone>
-            <Languages>Portuguese,English,Spanish</Languages>
+            <Languages>Portuguese, English, Spanish</Languages>
             <Specialty>Electric tours</Specialty>
             <ExperienceYears>6</ExperienceYears>
         </Guide>
@@ -34,7 +34,7 @@
             <LastName>Keller</LastName>
             <Email>jonas.keller@example.com</Email>
             <Phone>+49 151 2345678</Phone>
-            <Languages>German,English</Languages>
+            <Languages>German, English</Languages>
             <Specialty>Gravel</Specialty>
             <ExperienceYears>7</ExperienceYears>
         </Guide>
@@ -43,7 +43,7 @@
             <LastName>Dubois</LastName>
             <Email>emma.dubois@example.com</Email>
             <Phone>+33 6 66 77 88 99</Phone>
-            <Languages>French,English,Spanish</Languages>
+            <Languages>French, English, Spanish</Languages>
             <Specialty>Family trips</Specialty>
             <ExperienceYears>4</ExperienceYears>
         </Guide>
