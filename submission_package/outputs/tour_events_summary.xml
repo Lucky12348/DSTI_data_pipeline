@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ToursSummary>
+  <TourSummary id="t1">
+    <Title>Castles of the Loire</Title>
+    <Region>Loire Valley</Region>
+    <Country>France</Country>
+    <DurationDays>3</DurationDays>
+    <Difficulty>Moderate</Difficulty>
+    <BasePrice currency="EUR">450.00</BasePrice>
+    <Event id="e1">
+      <StartDate>2025-10-04</StartDate>
+      <EndDate>2025-10-06</EndDate>
+      <MaxParticipants>8</MaxParticipants>
+      <BookingCount>2</BookingCount>
+    </Event>
+    <Event id="e2">
+      <StartDate>2025-06-24</StartDate>
+      <EndDate>2025-06-26</EndDate>
+      <MaxParticipants>8</MaxParticipants>
+      <BookingCount>2</BookingCount>
+    </Event>
+  </TourSummary>
+  <TourSummary id="t2">
+    <Title>Loire E-Bike Escape</Title>
+    <Region>Loire Valley</Region>
+    <Country>France</Country>
+    <DurationDays>2</DurationDays>
+    <Difficulty>Easy</Difficulty>
+    <BasePrice currency="EUR">320.00</BasePrice>
+    <Event id="e3">
+      <StartDate>2025-08-02</StartDate>
+      <EndDate>2025-08-03</EndDate>
+      <MaxParticipants>8</MaxParticipants>
+      <BookingCount>0</BookingCount>
+    </Event>
+    <Event id="e4">
+      <StartDate>2025-06-17</StartDate>
+      <EndDate>2025-06-18</EndDate>
+      <MaxParticipants>8</MaxParticipants>
+      <BookingCount>3</BookingCount>
+    </Event>
+  </TourSummary>
+  <TourSummary id="t3">
+    <Title>Dolomite Peaks Challenge</Title>
+    <Region>Dolomites</Region>
+    <Country>Italy</Country>
+    <DurationDays>5</DurationDays>
+    <Difficulty>Hard</Difficulty>
+    <BasePrice currency="EUR">980.00</BasePrice>
+    <Event id="e5">
+      <StartDate>2025-08-08</StartDate>
+      <EndDate>2025-08-12</EndDate>
+      <MaxParticipants>15</MaxParticipants>
+      <BookingCount>3</BookingCount>
+    </Event>
+    <Event id="e6">
+      <StartDate>2025-10-14</StartDate>
+      <EndDate>2025-10-18</EndDate>
+      <MaxParticipants>12</MaxParticipants>
+      <BookingCount>0</BookingCount>
+    </Event>
+  </TourSummary>
+  <TourSummary id="t4">
+    <Title>Gravel Valleys Discovery</Title>
+    <Region>Dolomites</Region>
+    <Country>Italy</Country>
+    <DurationDays>4</DurationDays>
+    <Difficulty>Moderate</Difficulty>
+    <BasePrice currency="EUR">720.00</BasePrice>
+    <Event id="e7">
+      <StartDate>2025-07-04</StartDate>
+      <EndDate>2025-07-07</EndDate>
+      <MaxParticipants>8</MaxParticipants>
+      <BookingCount>0</BookingCount>
+    </Event>
+    <Event id="e8">
+      <StartDate>2025-07-20</StartDate>
+      <EndDate>2025-07-23</EndDate>
+      <MaxParticipants>12</MaxParticipants>
+      <BookingCount>2</BookingCount>
+    </Event>
+  </TourSummary>
+</ToursSummary>

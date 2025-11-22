@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BikeInventory>
+  <RegionBikes id="r1">
+    <Name>Loire Valley</Name>
+    <Country>France</Country>
+    <Bike id="b1">
+      <Brand>Giant</Brand>
+      <Model>Defy Advanced</Model>
+      <Type>Road</Type>
+      <Status>Available</Status>
+      <DailyPrice currency="EUR">35.00</DailyPrice>
+      <BookingCount>0</BookingCount>
+    </Bike>
+    <Bike id="b2">
+      <Brand>Trek</Brand>
+      <Model>Domane SL</Model>
+      <Type>Road</Type>
+      <Status>Available</Status>
+      <DailyPrice currency="EUR">40.00</DailyPrice>
+      <BookingCount>0</BookingCount>
+    </Bike>
+    <Bike id="b3">
+      <Brand>Cannondale</Brand>
+      <Model>Trail 6</Model>
+      <Type>Mountain</Type>
+      <Status>InMaintenance</Status>
+      <DailyPrice currency="EUR">30.00</DailyPrice>
+      <BookingCount>1</BookingCount>
+    </Bike>
+    <Bike id="b4">
+      <Brand>Specialized</Brand>
+      <Model>Sirrus X</Model>
+      <Type>Hybrid</Type>
+      <Status>Available</Status>
+      <DailyPrice currency="EUR">28.00</DailyPrice>
+      <BookingCount>1</BookingCount>
+    </Bike>
+    <Bike id="b5">
+      <Brand>Moustache</Brand>
+      <Model>Samedi 27</Model>
+      <Type>Electric</Type>
+      <Status>Reserved</Status>
+      <DailyPrice currency="EUR">55.00</DailyPrice>
+      <BookingCount>1</BookingCount>
+    </Bike>
+  </RegionBikes>
+  <RegionBikes id="r2">
+    <Name>Dolomites</Name>
+    <Country>Italy</Country>
+    <Bike id="b6">
+      <Brand>Specialized</Brand>
+      <Model>Turbo Levo</Model>
+      <Type>Electric</Type>
+      <Status>Available</Status>
+      <DailyPrice currency="EUR">60.00</DailyPrice>
+      <BookingCount>4</BookingCount>
+    </Bike>
+    <Bike id="b7">
+      <Brand>Scott</Brand>
+      <Model>Scale 960</Model>
+      <Type>Mountain</Type>
+      <Status>Available</Status>
+      <DailyPrice currency="EUR">45.00</DailyPrice>
+      <BookingCount>1</BookingCount>
+    </Bike>
+    <Bike id="b8">
+      <Brand>Canyon</Brand>
+      <Model>Grail 7</Model>
+      <Type>Hybrid</Type>
+      <Status>Reserved</Status>
+      <DailyPrice currency="EUR">50.00</DailyPrice>
+      <BookingCount>1</BookingCount>
+    </Bike>
+    <Bike id="b9">
+      <Brand>Orbea</Brand>
+      <Model>Gain</Model>
+      <Type>Electric</Type>
+      <Status>Available</Status>
+      <DailyPrice currency="EUR">58.00</DailyPrice>
+      <BookingCount>1</BookingCount>
+    </Bike>
+    <Bike id="b10">
+      <Brand>Bianchi</Brand>
+      <Model>Impulso</Model>
+      <Type>Road</Type>
+      <Status>Available</Status>
+      <DailyPrice currency="EUR">42.00</DailyPrice>
+      <BookingCount>1</BookingCount>
+    </Bike>
+  </RegionBikes>
+</BikeInventory>
