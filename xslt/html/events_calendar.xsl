@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   Scenario (HTML): Event calendar (departures).
-  - List all TourEvent with Tour/Region, dates, max capacity, booking count.
+  - List all TourEvent with Tour/Region, dates, max capacity, & booking count.
 -->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
@@ -32,11 +32,11 @@
                             <th>Bookings</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <xsl:apply-templates select="Operator/Regions/Region/Tours/Tour/TourEvents/TourEvent">
-                            <xsl:sort select="StartDate"/>
-                        </xsl:apply-templates>
-                    </tbody>
+                <tbody>
+                    <xsl:apply-templates select="Operator/Regions/Region/Tours/Tour/TourEvents/TourEvent">
+                        <xsl:sort select="StartDate"/>
+                    </xsl:apply-templates>
+                </tbody>
                 </table>
             </body>
         </html>
@@ -50,7 +50,7 @@
             <td><xsl:value-of select="StartDate"/> → <xsl:value-of select="EndDate"/></td>
             <td>
                 <strong><xsl:value-of select="$tour/Title"/></strong><br/>
-                <span class="muted">Difficulty <xsl:value-of select="$tour/Difficulty"/></span>
+                <span class="muted"><xsl:value-of select="$tour/Difficulty"/></span>
             </td>
             <td><xsl:value-of select="$region/Name"/> (<xsl:value-of select="$region/Country"/>)</td>
             <td><xsl:value-of select="MaxParticipants"/></td>
