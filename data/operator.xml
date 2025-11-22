@@ -408,7 +408,23 @@
                             <CyclingRoutes>
                                 <CyclingRouteRef ref="cr3" />
                             </CyclingRoutes>
-                            <EventBookings/>
+                            <EventBookings>
+                                <Booking id="bk18">
+                                    <BookingDate>2025-04-18</BookingDate>
+                                    <ClientRef>c3</ClientRef>
+                                    <BookedBikes>
+                                        <BookedBike ref="b1" />
+                                        <BookedBike ref="b4" />
+                                    </BookedBikes>
+                                    <Payments>
+                                        <Payment id="p25">
+                                            <Date>2025-04-25</Date>
+                                            <Amount currency="EUR">389.00</Amount>
+                                            <Method>CreditCard</Method>
+                                        </Payment>
+                                    </Payments>
+                                </Booking>
+                            </EventBookings>
                         </TourEvent>
                         <TourEvent id="e4">
                             <StartDate>2025-06-17</StartDate>
