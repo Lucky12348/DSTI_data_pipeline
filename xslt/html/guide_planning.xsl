@@ -2,7 +2,6 @@
 <!--
   Scenario (HTML): Guide planning.
   - List each guide with the events they are assigned to.
-  - Resolve TourEvent -> Tour -> Region to display context.
 -->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
@@ -51,6 +50,7 @@
                         <th>Period</th>
                         <th>Tour</th>
                         <th>Region</th>
+                        <th>Country</th>
                         <th>Difficulty</th>
                     </tr>
                 </thead>
@@ -65,12 +65,13 @@
                                     <td><xsl:value-of select="$event/StartDate"/> → <xsl:value-of select="$event/EndDate"/></td>
                                     <td><xsl:value-of select="$tour/Title"/></td>
                                     <td><xsl:value-of select="$region/Name"/></td>
+                                    <td><xsl:value-of select="$region/Country"/></td>
                                     <td><xsl:value-of select="$tour/Difficulty"/></td>
                                 </tr>
                             </xsl:for-each>
                         </xsl:when>
                         <xsl:otherwise>
-                            <tr><td colspan="4" class="muted">No planned events</td></tr>
+                            <tr><td colspan="5" class="muted">No planned events</td></tr>
                         </xsl:otherwise>
                     </xsl:choose>
                 </tbody>
