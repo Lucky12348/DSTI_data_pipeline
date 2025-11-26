@@ -5,7 +5,6 @@ This project designs an XML-based data platform for a cycling tour operator. It 
 - A modular XML Schema (`schemas/xml/operator.xsd`) and a representative XML database (`data/operator.xml`).
 - User-oriented scenarios rendered via XSLT: 6 HTML/visualizations, 2 XML exports, and 2 JSON exports.
 - Python tooling to validate the XML against the schema and to apply XSLT, plus a DOM-based reimplementation of one scenario without XSLT.
-- (Optional) Java implementation and a short report describing modeling choices, scenarios, team workload, tooling, and any AI assistance.
 
 ![data modeling](docs/data-model.png)
 
