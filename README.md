@@ -119,4 +119,4 @@ python python/invoice_dom.py --xml data/operator.xml --out outputs/invoice_dom.h
 Generated files land in `outputs/`. Open HTML in a browser; JSON/XML can be inspected directly.
 
 # Contributors
-Thanks to [BenjaminUzandotio](https://github.com/BenjaminUzandotio), [OmarOsta](https://github.com/OmarOsta), [MohammedBenrohou](), [Lucky12348](https://github.com/Lucky12348) for their valuable contributions to this project.
+Thanks to [BenjaminUzandotio](https://github.com/BenjaminUzandotio), [OmarOsta](https://github.com/OmarOsta), [MohammedBenrohou](https://github.com/mbenrohou02), [Lucky12348](https://github.com/Lucky12348) for their valuable contributions to this project.
